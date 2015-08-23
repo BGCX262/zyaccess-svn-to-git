@@ -1,0 +1,123 @@
+telnet登录android手机
+http://bbs.anzhi.com/thread-4672801-1-1.html
+前提是:
+1) 手机已经root，且装有busybox，
+2) 还装有至少一款terminal（模拟终端）软件，手机连wifi路由器。
+3) 还要有一些基础常识，比如linux命令，telnet。
+这里模拟终端推荐以Better Terminal Emulator Pro，任意app市场里搜索
+(1)
+Android端打开terminal软件，输入以下命令
+# su           
+然后按软键盘的“回车”，su命令指 获得root权限
+
+(2)
+# busybox ifconfig  
+此命令获得手机的ip，显示如下，这里以192.168.1.104为例：
+tiwlan0   Link encap:Ethernet  HWaddr 98:4B:4A:7C:98:B8
+          inet addr:192.168.1.101  Bcast:255.255.255.255  Mask:255.255.255.0
+          inet6 addr: fe80::9a4b:4aff:fe7c:98b8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:24801 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:20885 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:22691266 (21.6 MiB)  TX bytes:4128646 (3.9 MiB)
+
+(3)
+# busybox telnetd -l /system/bin/sh     
+开启telnetd服务，telnetd可以看作一个服务端。
+
+
+(4)
+然后回到电脑端，开始-运行-cmd，输入telnet 192.168.1.101，回车,
+ok，就连上手机了，大部分linux命令都可以执行（不过要加上busybox，不明白为什么的去google或百度）
+
+(5)
+这里, 就可以在你的手机运行几个简单的Linux命令了，
+
+cd /data/app 回车
+ls 回车
+可以看到/data/app目录下所有程序的数据文件。
+
+
+busybox ps
+可以看到你当前运行的所有程序，以及进程号
+12586 10039      0:03 com.motorola.blur.conversations
+12631 10055      0:00 com.motorola.atcmd.plugin
+12662 10047      0:00 com.motorola.blur.contacts
+12737 10080      0:00 com.motorola.android.datamanager
+12744 10148      0:00 com.estrongs.android.taskmanager
+12761 10047      0:00 com.motorola.android.simcontactadapter
+12795 0          0:00 /system/bin/sh
+12812 10062      0:00 com.android.music
+12837 0          0:00 busybox ps
+
+
+busybox top
+相当于win下的任务管理器，可以看到所有运行的后台任务，以及它们的cpu占用率。Ctrl + C退出。
+Mem: 468304K used, 20380K free, 0K shrd, 15408K buff, 110848K cached
+CPU:  0.0% usr 23.0% sys  0.0% nic 76.9% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 0.00 0.04 0.13 1/816 12838
+  PID  PPID USER     STAT   VSZ %MEM CPU %CPU COMMAND
+12838 12795 0        R     1080  0.2   0 23.0 busybox top
+1342  1150 1000     S     327m 68.6   0  0.0 system_server
+3647  1150 10110    S     251m 52.7   0  0.0 jp.co.johospace.jorte
+1519  1150 10008    S     232m 48.6   0  0.0 com.motorola.blur.service.main
+1528  1150 10047    S     197m 41.3   0  0.0 com.motorola.blur.home
+
+
+
+cat /proc/cpuinfo
+查看CPU信息，当前频率。
+
+# cat /proc/cpuinfo
+Processor       : ARMv7 Processor rev 2 (v7l)
+BogoMIPS        : 299.11
+Features        : swp half thumb fastmult vfp edsp neon vfpv3
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x3
+CPU part        : 0xc08
+CPU revision    : 2
+
+Hardware        : mapphone_UMTS
+Revision        : 0000
+Serial          : 0000000000000000
+CPU Tier        : 10
+
+
+
+
+注意，慎用rm， mv等命令！
+
+
+////////////////////////////////////////////////////
+如何终止telnet服务，查看telnet的进程号，：
+
+# busybox ps | busybox grep telnetd 
+然后回车, 看到显示如下:
+12385 0          0:00 busybox telnetd -l /system/bin/sh
+12797 0          0:00 busybox grep telnetd
+
+可以看到telnetd的进程号是12385，
+执行kill <进程号>就可以杀死进程了, 比如kill 12385
+
+
+
+如果觉得每次在手机上输一堆命令行过于麻烦，可以把上述shell命令写进脚本，
+
+注意，如果脚本放在SD卡下将不可执行，必须放在/data目录下。
+
+
+
+我的脚本如下
+####su
+#####echo "Su Success...Opentel Now Get Root Access..."
+##cp /sdcard/opentel.sh /data
+#busybox telnetd -l /system/bin/sh
+echo " "
+echo "Telnetd Service Running..."
+busybox ifconfig | grep 'inet addr' | grep -v '127.0.0.1' | awk '{print $2}'
+echo " "
+echo "PID:"
+busybox ps | grep telnetd | grep '/system/bin/sh' | awk '{print $1}'
+

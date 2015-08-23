@@ -1,0 +1,244 @@
+用 telnet 登录 android 手机
+http://bbs.dospy.com/thread-12844798-1-404-33.html
+http://hi.baidu.com/%BA%CD%B7%E7%D7%F4%B6%D8/blog/item/930d5cdd18432d4eccbf1a84.html
+无意中搜到的方法，觉得还不错，毕竟在有网络连接的环境里面，在电脑上输入命令要比直接在手机上输入快
+
+得多，还能复制粘贴，手机也不用老开着屏幕费电了。
+
+当然前提是android手机，已经root，装有busybox，还装有至少一款terminal软件。
+提是手机已经root，切装有busybox，还装有至少一款terminal（模拟终端）软件，手机连wifi路由器。还要有一些基础常识，比如linux命令，telnet。
+
+这里模拟终端推荐以Better Terminal Emulator Pro，以下两种安装方式均可：
+
+市场搜索“超级终端”即可
+
+
+?手机连接上wifi
+
+?打开terminal软件
+
+$ su                                                    <- 取得root权限
+
+# busybox ifconfig                               <-查看手机ip地址（也可以在设置里面查看）
+
+# busybox telnetd -l /system/bin/sh     <-开启telnet服务，加的参数是告诉系统收到telnet请求时直接
+
+启动shell，因为android系统里面没有login程序，就只好直接用root权限启动一个shell用了
+
+?这时就可以用pc连接手机了，方法跟普通的telnet连接完全一样，只是不需要输入用户名密码了，进去直接
+
+是root
+
+?要终止telnet服务的时候，kill吧
+
+# busybox ps | busybox grep telnetd   <-查找telnetd的进程号
+
+# kill <进程号>
+
+不过每次都用terminal输入命令还是烦，改明儿写个apk自动化一把吧。
+
+
+
+2.)----------------
+telnet 登录 android 手机
+http://blog.csdn.net/dos5gw/article/details/6770902
+分类： Android 2011-09-13 12:59 15人阅读 评论(0) 收藏 举报
+前提是android手机，已经root，装有busybox，还装有至少一款terminal软件，
+
+这里以Better Terminal Emulator Pro为例，
+
+电子市场下载地址 https://market.android.com/details?id=com.magicandroidapps.bettertermpro，
+
+机锋市场：http://apk.gfan.com/Product/App3288.html
+
+
+Android端打开terminal软件
+
+# su           
+
+# busybox ifconfig   
+
+# busybox telnetd -l /system/bin/sh     
+
+su和ifconfig不用解释，唯一值得注意的是，busybox的-l参数，
+
+（telnetd参数使用参考http://study.chyangwa.com/IT/AIX/aixcmds5/telnetd.htm）
+
+
+终止telnet服务
+
+# busybox ps | busybox grep telnetd 
+
+# kill <进程号>
+
+
+如果觉得每次在手机上输一堆命令行过于麻烦，可以把上述shell命令写进脚本，
+
+注意，如果脚本放在SD卡下将不可执行，必须放在/data目录下。
+
+view plain
+####su  
+#####echo "Su Success...Opentel Now Get Root Access..."  
+##cp /sdcard/opentel.sh /data  
+  
+#busybox telnetd -l /system/bin/sh  
+echo " "  
+echo "Telnetd Service Running..."  
+busybox ifconfig | grep 'inet addr' | grep -v '127.0.0.1' | awk '{print $2}'  
+  
+echo " "  
+echo "PID:"  
+busybox ps | grep telnetd | grep '/system/bin/sh' | awk '{print $1}'  
+
+
+
+3.)----------------
+http://bbs.goapk.com/thread-4672801-1-1.html
+前提是:
+1) 手机已经root(VISIONary.apk)，且装有busybox(BusyBox.apk)，
+2) 还装有至少一款terminal（模拟终端）软件，手机连wifi路由器。
+3) 还要有一些基础常识，比如linux命令，telnet。
+这里模拟终端推荐以Better Terminal Emulator Pro，任意app市场里搜索
+(1)
+Android端打开terminal软件，输入以下命令
+# su           
+然后按软键盘的“回车”，su命令指 获得root权限
+
+(2)
+# busybox ifconfig  
+此命令获得手机的ip，显示如下，这里以192.168.1.104为例：
+tiwlan0   Link encap:Ethernet  HWaddr 98:4B:4A:7C:98:B8
+          inet addr:192.168.1.101  Bcast:255.255.255.255  Mask:255.255.255.0
+          inet6 addr: fe80::9a4b:4aff:fe7c:98b8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:24801 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:20885 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:22691266 (21.6 MiB)  TX bytes:4128646 (3.9 MiB)
+
+(3)
+# busybox telnetd -l /system/bin/sh     
+开启telnetd服务，telnetd可以看作一个服务端。
+
+
+(4)
+然后回到电脑端，开始-运行-cmd，输入telnet 192.168.1.101，回车,
+ok，就连上手机了，大部分linux命令都可以执行（不过要加上busybox，不明白为什么的去google或百度）
+
+(5)
+这里, 就可以在你的手机运行几个简单的Linux命令了，
+
+cd /data/app 回车
+ls 回车
+可以看到/data/app目录下所有程序的数据文件。
+
+
+busybox ps
+可以看到你当前运行的所有程序，以及进程号
+12586 10039      0:03 com.motorola.blur.conversations
+12631 10055      0:00 com.motorola.atcmd.plugin
+12662 10047      0:00 com.motorola.blur.contacts
+12737 10080      0:00 com.motorola.android.datamanager
+12744 10148      0:00 com.estrongs.android.taskmanager
+12761 10047      0:00 com.motorola.android.simcontactadapter
+12795 0          0:00 /system/bin/sh
+12812 10062      0:00 com.android.music
+12837 0          0:00 busybox ps
+
+
+busybox top
+相当于win下的任务管理器，可以看到所有运行的后台任务，以及它们的cpu占用率。Ctrl + C退出。
+Mem: 468304K used, 20380K free, 0K shrd, 15408K buff, 110848K cached
+CPU:  0.0% usr 23.0% sys  0.0% nic 76.9% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 0.00 0.04 0.13 1/816 12838
+  PID  PPID USER     STAT   VSZ %MEM CPU %CPU COMMAND
+12838 12795 0        R     1080  0.2   0 23.0 busybox top
+1342  1150 1000     S     327m 68.6   0  0.0 system_server
+3647  1150 10110    S     251m 52.7   0  0.0 jp.co.johospace.jorte
+1519  1150 10008    S     232m 48.6   0  0.0 com.motorola.blur.service.main
+1528  1150 10047    S     197m 41.3   0  0.0 com.motorola.blur.home
+
+
+
+cat /proc/cpuinfo
+查看CPU信息，当前频率。
+
+# cat /proc/cpuinfo
+Processor       : ARMv7 Processor rev 2 (v7l)
+BogoMIPS        : 299.11
+Features        : swp half thumb fastmult vfp edsp neon vfpv3
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x3
+CPU part        : 0xc08
+CPU revision    : 2
+
+Hardware        : mapphone_UMTS
+Revision        : 0000
+Serial          : 0000000000000000
+CPU Tier        : 10
+
+
+
+
+注意，慎用rm， mv等命令！
+
+
+////////////////////////////////////////////////////
+如何终止telnet服务，查看telnet的进程号，：
+
+# busybox ps | busybox grep telnetd 
+然后回车, 看到显示如下:
+12385 0          0:00 busybox telnetd -l /system/bin/sh
+12797 0          0:00 busybox grep telnetd
+
+可以看到telnetd的进程号是12385，
+执行kill <进程号>就可以杀死进程了, 比如kill 12385
+
+
+
+如果觉得每次在手机上输一堆命令行过于麻烦，可以把上述shell命令写进脚本，
+
+注意，如果脚本放在SD卡下将不可执行，必须放在/data目录下。
+
+
+
+我的脚本如下
+su
+echo "Su Success...Opentel Now Get Root Access..."
+cp /sdcard/opentel.sh /data
+busybox telnetd -l /system/xbin/sh
+echo " "
+echo "Telnetd Service Running..."
+busybox ifconfig | grep 'inet addr' | grep -v '127.0.0.1' | awk '{print $2}'
+echo " "
+echo "PID:"
+busybox ps | grep telnetd | grep '/system/bin/sh' | awk '{print $1}'
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+开启android中telnetd远程登录服务的方法
+http://hi.baidu.com/lvgb/blog/item/59d09c2b454968e9e7cd404e.html
+    通过数据线及adb命令登录手机android系统很不方便，若PC机及手机均有wifi功能，可使PC通过wifi远程登录android,会带来很多方便。
+
+ 
+
+    要实现这个功能，首先要在手机上开启telnetd 服务，方法如下：
+   1、确认手机上装有busybox软件，若没有需自行下载安装。
+
+   2、运行busybox命令，确认输出中有telnetd，若无需更换其他busybox。
+
+   3、要取得手机的root权限，手机上要装有terminal 软件。
+
+   4、在terminal下使用 su 命令转为 root 用户， 键入命令 telnetd -l /system/xbin/sh （要事先检查/system/xbin/sh是否存在）
+   5.、PC及手机连接同一个wifi 网络，在PC上telnet登录手机的 ip 地址即可。
+
+   注意事项：
+
+    telnet登录手机系统后，默认的sh shell可能不好用，比如使用backspace键有乱码，不能按上下箭头重复历史命令，输出没有颜色等，此时可自行选用bash、csh等常用的shell来解决。可用以下两种方法：
+
+   1、直接在telnet窗口下运行bash或csh命令。
+
+   2、在启动telnetd时直接指定需要的shell，如telnetd -l /system/xbin/bash，这样telnet登录后默认shell就是bash 。
+
+   另外，为防止登录过程中手机wifi休眠造成网络中断，要对手机wifi的休眠功能进行正确设置。

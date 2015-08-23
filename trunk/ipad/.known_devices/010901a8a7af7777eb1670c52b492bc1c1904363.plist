@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<plist version="1.0">
+<dict>
+	<key>SoftwareBehavior</key>
+	<data>QQEAAAAAAAAAAAAAAAAAAA==</data>
+	<key>UseRaptorCerts</key>
+	<true />
+	<key>SupportedDeviceFamilies</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>TelephonyCapability</key>
+	<true />
+	<key>BasebandStatus</key>
+	<string>NoTelephonyCapabilty</string>
+	<key>ProtocolVersion</key>
+	<string>2</string>
+	<key>UseActivityURL</key>
+	<true />
+	<key>WiFiAddress</key>
+	<string>74:e1:b6:45:6b:ea</string>
+	<key>PasswordProtected</key>
+	<true />
+	<key>DeviceName</key>
+	<string>张宁怡的 iPad</string>
+	<key>SerialNumber</key>
+	<string>DMQHDDVCDFHW</string>
+	<key>ProductionSOC</key>
+	<true />
+	<key>ActivationState</key>
+	<string>Activated</string>
+	<key>MobileSubscriberCountryCode</key>
+	<string></string>
+	<key>FirmwareVersion</key>
+	<string>iBoot-1219.62.15</string>
+	<key>DeviceClass</key>
+	<string>iPad</string>
+	<key>MLBSerialNumber</key>
+	<string>DMP21075BL8F0MLA9</string>
+	<key>EthernetAddress</key>
+	<string>74:e1:b6:45:6b:ec</string>
+	<key>DieID</key>
+	<integer>4840845502511816168</integer>
+	<key>RegionInfo</key>
+	<string>CH/A</string>
+	<key>ActivationPublicKey</key>
+	<data>
+		LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JR0pBb0dCQVB4SVdj
+		Z3JydlR5M3dtTkFaMFhxSk9Xa0UvMDBXVnF3MTRldnZhMUtTNnpvSGdub0hz
+		WjFucDUKRHVldVlSZzdQak0zaGpaRFR0QWpBOUhvSUQ1dk9uZkQvK2E2cnY4
+		aGpMMVBJeStiY2pPa292NS9lSXVrWk54dApEdmJTeGxOUnBjSXBNV0tZZDFF
+		Uis1YldBaVhmWXo5MjZFTldieERDeXFybU1nc0o3TkpMQWdNQkFBRT0KLS0t
+		LS1FTkQgUlNBIFBVQkxJQyBLRVktLS0tLQo=
+	</data>
+	<key>BluetoothAddress</key>
+	<string>74:e1:b6:45:6b:eb</string>
+	<key>BuildVersion</key>
+	<string>9B206</string>
+	<key>HardwarePlatform</key>
+	<string>s5l8942x</string>
+	<key>SBLockdownEverRegisteredKey</key>
+	<true />
+	<key>SIMGID2</key>
+	<data></data>
+	<key>HardwareModel</key>
+	<string>K93aAP</string>
+	<key>DeviceColor</key>
+	<string>black</string>
+	<key>SIMGID1</key>
+	<data></data>
+	<key>SIMStatus</key>
+	<string>kCTSIMSupportSIMStatusReady</string>
+	<key>SoftwareBundleVersion</key>
+	<string></string>
+	<key>ActivationStateAcknowledged</key>
+	<true />
+	<key>ModelNumber</key>
+	<string>MC769</string>
+	<key>ProductVersion</key>
+	<string>5.1.1</string>
+	<key>SDIOManufacturerTuple</key>
+	<dict>
+		<key>IOSDIOManufacturerID</key>
+		<integer>720</integer>
+		<key>IOSDIOProductID</key>
+		<integer>17193</integer>
+	</dict>
+	<key>CPUArchitecture</key>
+	<string>armv7f</string>
+	<key>ProductType</key>
+	<string>iPad2,4</string>
+	<key>DevicePublicKey</key>
+	<data>
+		LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JR0pBb0dCQU5DQVp3
+		QWsrVFJsVU9HZm5NNXN5SkNnUHFSVkM3ZGhJdTFFVXNna3FpbjZ6UWNGZ2x3
+		bVp4VHIKcCtjSEZnMnRZMGsxQTlBcjZ2ejVESWxiaGRCempiNlcxYTRXWmEv
+		aFVaMHNQZlZLNXM3YkVIdEExdDJwc3dYbwp2dnZYT3puMkpaUXlHOGVGTW5k
+		WkZJL0tFOVo4M2NSMUdZVHFOeFJ4Rk9zcThEY1pCM3gzQWdNQkFBRT0KLS0t
+		LS1FTkQgUlNBIFBVQkxJQyBLRVktLS0tLQo=
+	</data>
+	<key>TimeZone</key>
+	<string>Asia/Shanghai</string>
+	<key>TimeZoneOffsetFromUTC</key>
+	<integer>28800</integer>
+	<key>TrustedHostAttached</key>
+	<true />
+	<key>UniqueChipID</key>
+	<integer>497093104942</integer>
+	<key>UniqueDeviceID</key>
+	<string>010901a8a7af7777eb1670c52b492bc1c1904363</string>
+	<key>IMLockdownEverRegisteredKey</key>
+	<true />
+	<key>PartitionType</key>
+	<string></string>
+	<key>DeviceCertificate</key>
+	<data>
+		LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM4ekNDQWx5Z0F3SUJB
+		Z0lLQThmVndBRTM0R1BNRFRBTkJna3Foa2lHOXcwQkFRVUZBREJhTVFzd0NR
+		WUQKVlFRR0V3SlZVekVUTUJFR0ExVUVDaE1LUVhCd2JHVWdTVzVqTGpFVk1C
+		TUdBMVVFQ3hNTVFYQndiR1VnYVZCbwpiMjVsTVI4d0hRWURWUVFERXhaQmNI
+		QnNaU0JwVUdodmJtVWdSR1YyYVdObElFTkJNQjRYRFRFeU1EY3hOREExCk1U
+		WXhORm9YRFRFMU1EY3hOREExTVRZeE5Gb3dnWU14TFRBckJnTlZCQU1XSkVR
+		eFFVWkRRelJFTFRWQ01EUXQKTkRjME1TMDRNRGd3TFROQ09VWkNOMFl5TUVJ
+		MU1ERUxNQWtHQTFVRUJoTUNWVk14Q3pBSkJnTlZCQWdUQWtOQgpNUkl3RUFZ
+		RFZRUUhFd2xEZFhCbGNuUnBibTh4RXpBUkJnTlZCQW9UQ2tGd2NHeGxJRWx1
+		WXk0eER6QU5CZ05WCkJBc1RCbWxRYUc5dVpUQ0JuekFOQmdrcWhraUc5dzBC
+		QVFFRkFBT0JqUUF3Z1lrQ2dZRUEvRWhaeUN1dTlQTGYKQ1kwQm5SZW9rNWFR
+		VC9UUlpXckRYaDYrOXJVcExyT2dlQ2VnZXhuV2Vua081NjVoR0RzK016ZUdO
+		a05PMENNRAowZWdnUG04NmQ4UC81cnF1L3lHTXZVOGpMNXR5TTZTaS9uOTRp
+		NlJrM0cwTzl0TEdVMUdsd2lreFlwaDNVUkg3Cmx0WUNKZDlqUDNib1ExWnZF
+		TUxLcXVZeUN3bnMwa3NDQXdFQUFhT0JsVENCa2pBZkJnTlZIU01FR0RBV2dC
+		U3kKL2lFalJJYVZhbm5WZ1NhT2N4RFlwMHlPZERBZEJnTlZIUTRFRmdRVVFw
+		OGNKSHUxQ0xReHh1WXpaNTVLZ3ozSwovM2d3REFZRFZSMFRBUUgvQkFJd0FE
+		QU9CZ05WSFE4QkFmOEVCQU1DQmFBd0lBWURWUjBsQVFIL0JCWXdGQVlJCkt3
+		WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01CQUdDaXFHU0liM1kyUUdDZ0lFQWdV
+		QU1BMEdDU3FHU0liM0RRRUIKQlFVQUE0R0JBRVdPdStTa0ZGZ3BvS3NOQTYx
+		M3d5VytZRnowblhieHEwTUt4ZFh2bUNtS0JueitwellHZE9uSgpmZ256Y0dO
+		VWFWY3FudVVmZmJsNXpYdW4xaUZGRDh6bEpndFBkZU9YNWxmUGhHU1BOWWVG
+		bzlZNGFzdjhKKzJZCldJL3M0b3RhRkZkOUJJVXF1bFE4RkxNZkRMZTZtT3Ix
+		ZUlCQzlPNkJLdGpWOTZyNXhiMnEKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0t
+		LQo=
+	</data>
+	<key>ActivityURL</key>
+	<string>https://albert.apple.com/deviceservices/activity</string>
+	<key>SDIOProductInfo</key>
+	<string>P=K94 m=1.0 V=a</string>
+	<key>TimeIntervalSince1970</key>
+	<integer>1342527176</integer>
+	<key>MobileSubscriberNetworkCode</key>
+	<string></string>
+	<key>HostAttached</key>
+	<true />
+	<key>Uses24HourClock</key>
+	<true />
+</dict>
+</plist>

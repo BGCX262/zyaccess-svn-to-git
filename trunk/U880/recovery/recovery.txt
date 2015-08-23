@@ -1,0 +1,5 @@
+1.copy recovery-clockwork-4.0.1.4-blade-gen2.img to sdcard and rename to 1.img
+
+Better Termnial Emulator pro command.
+#su
+#flash_image recovery /sdcard/1.img

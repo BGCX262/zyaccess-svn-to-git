@@ -1,0 +1,18 @@
+实战android手机telnet、ftp登陆，权限修改
+http://blog.csdn.net/dijkstar/article/details/7061524
+2011-12-11 19:01 1290人阅读 评论(0) 收藏 举报
+
+问题的提出：我用的手机是HTC magic，sd卡用的是金士顿的，不知道什么原因，总是有时能找到sd卡，有时找不到。我个人总有一些数据文件，想固定放在手机的系统上，而不是sd卡上（/sdcard），那么如何将一些文件放在手机的系统之上呢（/） ?
+
+1. 下载手机ftp服务器软件——SwiFTP Server（http://file.shouji.com.cn/do/prepare/soft?id=16566&softID=18957）。自己按照提示装好ftp服务器，很简单，让服务器运行起来，用计算机可以登陆上，如ftp://192.168.1.3:2121；（ip地址是通过下面方式看到的）
+
+2. 设置手机系统的telnet服务器：①使手机连上wifi（怎么连？需要路由器，自己在网上找找看这方面的资料）；②运行手机上终端软件，输入：
+# su           //切换到#用户，获得root权限，注意//后面不要输入
+#busybox ifconfig     //查看手机的ip地址，我这里看到是是192.168.1.3；
+# busybox telnetd -l /system/bin/sh     //启动telnet服务器；
+在计算机端cmd下，输入：tenet 192.168.1.3可以进入。我习惯使用putty登陆。
+
+3. 开始向手机系统拷贝文件，但系统目录是“只读”的（ Read-only file system），向根目录下拷贝文件，需要把根目录设为“读写”：
+#mount 看看系统的设置
+再使用：#mount -o rw,remount -t rootfs / 将根目录设为只读：（如果不成功，前面添加#busybox ）
+再次使用：#mount 看看系统的设置：

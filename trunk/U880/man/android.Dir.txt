@@ -1,0 +1,462 @@
+[教程]Android系统文件夹结构解析
+       在网上找来的，拿出来分享下。。。 
+       虽说不是我原创的，但我看到论坛里没有，所以就转了过来，目的是为机油们好。希望大家不要喷水。。。本人也是小白 
+ 
+\\system\\app  
+这个里面主要存放的是常规下载的应用程序，可以看到都是以APK格式结尾的文件。在这个文件夹下的程序为系统默认的组件，自己安装的软件将不会出现在这里，而是\\data\\文件夹中。下面是详细的介绍:  
+\\system\\app\\AlarmClock.apk 闹钟  
+\\system\\app\\AlarmClock.odex  
+\\system\\app\\Browser.apk 浏览器  
+\\system\\app\\Browser.odex  
+\\system\\app\\Bugreport.apk Bug报告  
+\\system\\app\\Bugreport.odex  
+\\system\\app\\Calculator.apk 计算器  
+\\system\\app\\Calculator.odex  
+\\system\\app\\Calendar.apk 日历  
+\\system\\app\\Calendar.odex  
+\\system\\app\\CalendarProvider.apk 日历提供  
+\\system\\app\\CalendarProvider.odex  
+\\system\\app\\Camera.apk 照相机  
+\\system\\app\\Camera.odex  
+\\system\\app\\com.amazon.mp3.apk 亚马逊音乐  
+\\system\\app\\Contacts.apk 联系人  
+\\system\\app\\Contacts.odex  
+\\system\\app\\DownloadProvider.apk 下载提供  
+\\system\\app\\DownloadProvider.odex  
+\\system\\app\\DrmProvider.apk DRM数字版权提供  
+\\system\\app\\DrmProvider.odex  
+\\system\\app\\Email.apk 电子邮件客户端  
+\\system\\app\\Email.odex  
+\\system\\app\\FieldTest.apk 测试程序  
+\\system\\app\\FieldTest.odex  
+\\system\\app\\GDataFeedsProvider.apk GoogleData提供  
+\\system\\app\\GDataFeedsProvider.odex  
+\\system\\app\\Gmail.apk Gmail电子邮件  
+\\system\\app\\Gmail.odex  
+\\system\\app\\GmailProvider.apk Gmail提供  
+\\system\\app\\GmailProvider.odex  
+\\system\\app\\GoogleApps.apk 谷歌程序包  
+\\system\\app\\GoogleApps.odex  
+\\system\\app\\GoogleSearch.apk 搜索工具  
+\\system\\app\\GoogleSearch.odex  
+\\system\\app\\gtalkservice.apk GTalk服务  
+\\system\\app\\gtalkservice.odex  
+\\system\\app\\HTMLViewer.apk HTML查看器  
+\\system\\app\\HTMLViewer.odex  
+\\system\\app\\IM.apk 即使通讯组件包含MSN、yahoo通  
+\\system\\app\\ImCredentialProvider.apk  
+\\system\\app\\ImProvider.apk  
+\\system\\app\\ImProvider.odex  
+\\system\\app\\Launcher.apk 启动加载器  
+\\system\\app\\Launcher.odex  
+\\system\\app\\Maps.apk 电子地图  
+\\system\\app\\Maps.odex  
+\\system\\app\\MediaProvider.apk 多媒体播放提供  
+\\system\\app\\MediaProvider.odex  
+\\system\\app\\Mms.apk 短信、彩信  
+\\system\\app\\Mms.odex  
+\\system\\app\\Music.apk 音乐播放器  
+\\system\\app\\Music.odex  
+\\system\\app\\MyFaves.apk T-Mobile MyFaves程序  
+\\system\\app\\MyFaves.odex  
+\\system\\app\\PackageInstaller.apk apk安装程序  
+\\system\\app\\PackageInstaller.odex  
+\\system\\app\\Phone.apk 电话拨号器  
+\\system\\app\\Phone.odex  
+\\system\\app\\Settings.apk 系统设置  
+\\system\\app\\Settings.odex  
+\\system\\app\\SettingsProvider.apk 设置提供  
+\\system\\app\\SettingsProvider.odex  
+\\system\\app\\SetupWizard.apk 设置向导  
+\\system\\app\\SetupWizard.odex  
+\\system\\app\\SoundRecorder.apk 录音工具  
+\\system\\app\\SoundRecorder.odex  
+\\system\\app\\Street.apk 街景地图  
+\\system\\app\\Street.odex  
+\\system\\app\\Sync.apk 同步程序  
+\\system\\app\\Sync.odex  
+\\system\\app\\Talk.apk 语音程序  
+\\system\\app\\Talk.odex  
+\\system\\app\\TelephonyProvider.apk 电话提供  
+\\system\\app\\TelephonyProvider.odex  
+\\system\\app\\Updater.apk 更新程序  
+\\system\\app\\Updater.odex  
+\\system\\app\\Vending.apk 制造商信息  
+\\system\\app\\Vending.odex  
+\\system\\app\\VoiceDialer.apk 语音拨号器  
+\\system\\app\\VoiceDialer.odex  
+\\system\\app\\YouTube.apk Youtube视频  
+\\system\\app\\YouTube.odex  
+ 
+ 
+--------------------------------------------------------------------------------  
+ 
+ 
+\\system\\bin  
+这个目录下的文件都是系统的本地程序，从bin文件夹名称可以看出是binary二进制的程序，里面主要是Linux系统自带的组件，Android手机网就主要文件做下简单的分析介绍：  
+\\system\\bin\\akmd  
+\\system\\bin\\am  
+\\system\\bin\\app_process 系统进程  
+\\system\\bin\\dalvikvm Dalvik虚拟机宿主  
+\\system\\bin\\dbus-daemon 系统BUS总线监控  
+\\system\\bin\\debuggerd 调试器  
+\\system\\bin\\debug_tool 调试工具  
+\\system\\bin\\dexopt DEX选项  
+\\system\\bin\\dhcpcd DHCP服务器  
+\\system\\bin\\dumpstate 状态抓取器  
+\\system\\bin\\dumpsys 系统抓取器  
+\\system\\bin\\dvz  
+\\system\\bin\\fillup  
+\\system\\bin\\flash_image 闪存映像  
+\\system\\bin\\hciattach  
+\\system\\bin\\hcid HCID内核  
+\\system\\bin\\hostapd  
+\\system\\bin\\hostapd_cli  
+\\system\\bin\\htclogkernel  
+\\system\\bin\\input  
+\\system\\bin\\installd  
+\\system\\bin\\itr  
+\\system\\bin\\linker  
+\\system\\bin\\logcat Logcat日志打印  
+\\system\\bin\\logwrapper  
+\\system\\bin\\mediaserver  
+\\system\\bin\\monkey  
+\\system\\bin\\mountd 存储挂载器  
+\\system\\bin\\netcfg 网络设置  
+\\system\\bin\\ping Ping程序  
+\\system\\bin\\playmp3 MP3播放器  
+\\system\\bin\\pm 包管理器  
+\\system\\bin\\qemud QEMU虚拟机  
+\\system\\bin\\radiooptions 无线选项  
+\\system\\bin\\rild RIL组件  
+\\system\\bin\\sdptool  
+\\system\\bin\\sdutil  
+\\system\\bin\\service  
+\\system\\bin\\servicemanager 服务管理器  
+\\system\\bin\\sh  
+\\system\\bin\\ssltest SSL测试  
+\\system\\bin\\surfaceflinger 触摸感应驱动  
+\\system\\bin\\svc 服务  
+\\system\\bin\\system_server  
+\\system\\bin\\telnetd Telnet组件  
+\\system\\bin\\toolbox  
+\\system\\bin\\wlan_loader  
+\\system\\bin\\wpa_cli  
+\\system\\bin\\wpa_supplicant  
+ 
+ 
+--------------------------------------------------------------------------------  
+ 
+ 
+\\system\\etc  
+从文件夹名称来看保存的都是系统的配置文件，比如APN接入点设置等核心配置。  
+\\system\\etc\\apns-conf.xml APN接入点配置文件  
+\\system\\etc\\AudioFilter.csv 音频过滤器配置文件  
+\\system\\etc\\AudioPara4.csv  
+\\system\\etc\\bookmarks.xml 书签数据库  
+\\system\\etc\\dbus.conf 总线监视配置文件  
+\\system\\etc\\dhcpcd  
+\\system\\etc\\event-log-tags  
+\\system\\etc\\favorites.xml 收藏夹  
+\\system\\etc\\firmware 固件信息  
+\\system\\etc\\gps.conf GPS设置文件  
+\\system\\etc\\hcid.conf内核HCID配置文件  
+\\system\\etc\\hosts 网络DNS缓存  
+\\system\\etc\\init.goldfish.sh  
+\\system\\etc\\location 定位相关  
+\\system\\etc\\mountd.conf 存储挂载配置文件  
+\\system\\etc\\NOTICE.html 提示网页  
+\\system\\etc\\permissions.xml 权限许可  
+\\system\\etc\\pvplayer.conf  
+\\system\\etc\\security  
+\\system\\etc\\wifi WLAN相关组件  
+\\system\\etc\\dhcpcd\\dhcpcd-hooks  
+\\system\\etc\\dhcpcd\\dhcpcd-run-hooks  
+\\system\\etc\\dhcpcd\\dhcpcd.conf  
+\\system\\etc\\dhcpcd\\dhcpcd-hooks\\01-test  
+\\system\\etc\\dhcpcd\\dhcpcd-hooks\\20-dns.conf  
+\\system\\etc\\dhcpcd\\dhcpcd-hooks\\95-configured  
+\\system\\etc\\firmware\\brf6300.bin  
+\\system\\etc\\location\\gps  
+\\system\\etc\\location\\gps\\location 定位相关  
+\\system\\etc\\location\\gps\\nmea GPS数据解析  
+\\system\\etc\\location\\gps\\properties  
+\\system\\etc\\security\\cacerts.bks  
+\\system\\etc\\security\\otacerts.zip OTA下载验证  
+\\system\\etc\\wifi\\Fw1251r1c.bin  
+\\system\\etc\\wifi\\tiwlan.ini  
+\\system\\etc\\wifi\\wpa_supplicant.conf WPA验证组件  
+ 
+ 
+ 
+--------------------------------------------------------------------------------  
+ 
+ 
+\\system\\fonts  
+字体文件夹，除了标准字体和粗体、斜体外可以看到文件体积最大的可能是中文字库，或一些unicode字库，从T-Mobile G1上可以清楚的看到显示简体中文正常，其中DroidSansFallback.ttf文件大小  
+\\system\\fonts\\DroidSans-Bold.ttf  
+\\system\\fonts\\DroidSans.ttf  
+\\system\\fonts\\DroidSansFallback.ttf  
+\\system\\fonts\\DroidSansMono.ttf  
+\\system\\fonts\\DroidSerif-Bold.ttf  
+\\system\\fonts\\DroidSerif-BoldItalic.ttf  
+\\system\\fonts\\DroidSerif-Italic.ttf  
+\\system\\fonts\\DroidSerif-Regular.ttf  
+ 
+ 
+ 
+--------------------------------------------------------------------------------  
+ 
+ 
+\\system\\framework  
+framework主要是一些核心的文件，从后缀名为jar可以看出是是系统平台框架。  
+\\system\\framework\\am.jar  
+\\system\\framework\\am.odex  
+\\system\\framework\\android.awt.jar AWT库  
+\\system\\framework\\android.awt.odex  
+\\system\\framework\\android.policy.jar  
+\\system\\framework\\android.policy.odex  
+\\system\\framework\\android.test.runner.jar  
+\\system\\framework\\android.test.runner.odex  
+\\system\\framework\\com.google.android.gtalkservice.jar GTalk服务  
+\\system\\framework\\com.google.android.gtalkservice.odex  
+\\system\\framework\\com.google.android.maps.jar 电子地图库  
+\\system\\framework\\com.google.android.maps.odex  
+\\system\\framework\\core.jar 核心库，启动桌面时首先加载这个  
+\\system\\framework\\core.odex  
+\\system\\framework\\ext.jar  
+\\system\\framework\\ext.odex  
+\\system\\framework\\framework-res.apk  
+\\system\\framework\\framework-tests.jar  
+\\system\\framework\\framework-tests.odex  
+\\system\\framework\\framework.jar  
+\\system\\framework\\framework.odex  
+\\system\\framework\\input.jar 输入库  
+\\system\\framework\\input.odex  
+\\system\\framework\\itr.jar  
+\\system\\framework\\itr.odex  
+\\system\\framework\\monkey.jar  
+\\system\\framework\\monkey.odex  
+\\system\\framework\\pm.jar 包管理库  
+\\system\\framework\\pm.odex  
+\\system\\framework\\services.jar  
+\\system\\framework\\services.odex  
+\\system\\framework\\ssltest.jar  
+\\system\\framework\\ssltest.odex  
+\\system\\framework\\svc.jar 系统服务  
+\\system\\framework\\svc.odex  
+ 
+ 
+ 
+--------------------------------------------------------------------------------  
+ 
+ 
+\\system\\lib  
+lib目录中存放的主要是系统底层库，如平台运行时库。  
+\\system\\lib\\libaes.so  
+\\system\\lib\\libagl.so  
+\\system\\lib\\libandroid_runtime.so Android运行时库  
+\\system\\lib\\libandroid_servers.so 系统服务组件  
+\\system\\lib\\libaudio.so 音频处理  
+\\system\\lib\\libaudioeq.so EQ均衡器  
+\\system\\lib\\libaudioflinger.so 音频过滤器  
+\\system\\lib\\libbluetooth.so 蓝牙组件  
+\\system\\lib\\libc.so  
+\\system\\lib\\libcamera.so 超相机组件  
+\\system\\lib\\libcameraservice.so  
+\\system\\lib\\libcorecg.so  
+\\system\\lib\\libcrypto.so 加密组件  
+\\system\\lib\\libctest.so  
+\\system\\lib\\libcutils.so  
+\\system\\lib\\libdbus.so  
+\\system\\lib\\libdl.so  
+\\system\\lib\\libdrm1.so DRM解析库  
+\\system\\lib\\libdrm1_jni.so  
+\\system\\lib\\libdvm.so  
+\\system\\lib\\libexif.so  
+\\system\\lib\\libexpat.so  
+\\system\\lib\\libFFTEm.so  
+\\system\\lib\\libGLES_CM.so  
+\\system\\lib\\libgps.so  
+\\system\\lib\\libhardware.so  
+\\system\\lib\\libhgl.so  
+\\system\\lib\\libhtc_ril.so  
+\\system\\lib\\libicudata.so  
+\\system\\lib\\libicui18n.so  
+\\system\\lib\\libicuuc.so  
+\\system\\lib\\liblog.so  
+\\system\\lib\\libm.so  
+\\system\\lib\\libmedia.so  
+\\system\\lib\\libmediaplayerservice.so  
+\\system\\lib\\libmedia_jni.so  
+\\system\\lib\\libnativehelper.so  
+\\system\\lib\\libnetutils.so  
+\\system\\lib\\libOmxCore.so  
+\\system\\lib\\libOmxH264Dec.so  
+\\system\\lib\\libpixelflinger.so  
+\\system\\lib\\libpvasf.so  
+\\system\\lib\\libpvasfreg.so  
+\\system\\lib\\libpvauthor.so  
+\\system\\lib\\libpvcommon.so  
+\\system\\lib\\libpvdownload.so  
+\\system\\lib\\libpvdownloadreg.so  
+\\system\\lib\\libpvmp4.so  
+\\system\\lib\\libpvmp4reg.so  
+\\system\\lib\\libpvnet_support.so  
+\\system\\lib\\libpvplayer.so  
+\\system\\lib\\libpvrtsp.so  
+\\system\\lib\\libpvrtspreg.so  
+\\system\\lib\\libqcamera.so  
+\\system\\lib\\libreference-ril.so  
+\\system\\lib\\libril.so  
+\\system\\lib\\librpc.so  
+\\system\\lib\\libsgl.so  
+\\system\\lib\\libsonivox.so  
+\\system\\lib\\libsoundpool.so  
+\\system\\lib\\libsqlite.so  
+\\system\\lib\\libssl.so  
+\\system\\lib\\libstdc++.so  
+\\system\\lib\\libsurfaceflinger.so  
+\\system\\lib\\libsystem_server.so  
+\\system\\lib\\libthread_db.so  
+\\system\\lib\\libUAPI_jni.so  
+\\system\\lib\\libui.so  
+\\system\\lib\\libutils.so  
+\\system\\lib\\libvorbisidec.so  
+\\system\\lib\\libwbxml.so  
+\\system\\lib\\libwbxml_jni.so  
+\\system\\lib\\libwebcore.so  
+\\system\\lib\\libwpa_client.so  
+\\system\\lib\\libxml2wbxml.so  
+\\system\\lib\\libz.so  
+\\system\\lib\\modules  
+\\system\\lib\\modules\\wlan.ko  
+ 
+ 
+ 
+--------------------------------------------------------------------------------  
+ 
+ 
+\\system\\media  
+铃声音乐文件夹，除了常规的铃声外还有一些系统提示事件音  
+\\system\\media\\audio  
+\\system\\media\\audio\\alarms 闹铃音  
+\\system\\media\\audio\\notifications 提示音  
+\\system\\media\\audio\\ringtones 铃声  
+\\system\\media\\audio\\ui 界面操作事件音  
+\\system\\media\\audio\\alarms\\Alarm_Beep_01.ogg  
+\\system\\media\\audio\\alarms\\Alarm_Beep_02.ogg  
+\\system\\media\\audio\\alarms\\Alarm_Beep_03.ogg  
+\\system\\media\\audio\\alarms\\Alarm_Buzzer.ogg  
+\\system\\media\\audio\\alarms\\Alarm_Classic.ogg  
+\\system\\media\\audio\\alarms\\Alarm_Rooster_02.ogg  
+\\system\\media\\audio\\notifications\\Beat_Box_Android.ogg  
+\\system\\media\\audio\\notifications\\CaffeineSnake.ogg  
+\\system\\media\\audio\\notifications\\DearDeer.ogg  
+\\system\\media\\audio\\notifications\\DontPanic.ogg  
+\\system\\media\\audio\\notifications\\F1_MissedCall.ogg  
+\\system\\media\\audio\\notifications\\F1_New_MMS.ogg  
+\\system\\media\\audio\\notifications\\F1_New_SMS.ogg  
+\\system\\media\\audio\\notifications\\Heaven.ogg  
+\\system\\media\\audio\\notifications\\Highwire.ogg  
+\\system\\media\\audio\\notifications\\KzurbSonar.ogg  
+\\system\\media\\audio\\notifications\\OnTheHunt.ogg  
+\\system\\media\\audio\\notifications\\TaDa.ogg  
+\\system\\media\\audio\\notifications\\Tinkerbell.ogg  
+\\system\\media\\audio\\notifications\\Voila.ogg  
+\\system\\media\\audio\\ringtones\\BeatPlucker.ogg  
+\\system\\media\\audio\\ringtones\\BentleyDubs.ogg  
+\\system\\media\\audio\\ringtones\\BirdLoop.ogg  
+\\system\\media\\audio\\ringtones\\CaribbeanIce.ogg  
+\\system\\media\\audio\\ringtones\\CrazyDream.ogg  
+\\system\\media\\audio\\ringtones\\CurveBall.ogg  
+\\system\\media\\audio\\ringtones\\DreamTheme.ogg  
+\\system\\media\\audio\\ringtones\\EtherShake.ogg  
+\\system\\media\\audio\\ringtones\\FriendlyGhost.ogg  
+\\system\\media\\audio\\ringtones\\GameOverGuitar.ogg  
+\\system\\media\\audio\\ringtones\\Growl.ogg  
+\\system\\media\\audio\\ringtones\\InsertCoin.ogg  
+\\system\\media\\audio\\ringtones\\LoopyLounge.ogg  
+\\system\\media\\audio\\ringtones\\LoveFlute.ogg  
+\\system\\media\\audio\\ringtones\\MidEvilJaunt.ogg  
+\\system\\media\\audio\\ringtones\\MildlyAlarming.ogg  
+\\system\\media\\audio\\ringtones\\NewPlayer.ogg  
+\\system\\media\\audio\\ringtones\\Noises1.ogg  
+\\system\\media\\audio\\ringtones\\Noises2.ogg  
+\\system\\media\\audio\\ringtones\\Noises3.ogg  
+\\system\\media\\audio\\ringtones\\OrganDub.ogg  
+\\system\\media\\audio\\ringtones\\Ring_Classic_02.ogg  
+\\system\\media\\audio\\ringtones\\Ring_Digital_02.ogg  
+\\system\\media\\audio\\ringtones\\Ring_Synth_02.ogg  
+\\system\\media\\audio\\ringtones\\Ring_Synth_04.ogg  
+\\system\\media\\audio\\ringtones\\RomancingTheTone.ogg  
+\\system\\media\\audio\\ringtones\\SitarVsSitar.ogg  
+\\system\\media\\audio\\ringtones\\SpringyJalopy.ogg  
+\\system\\media\\audio\\ringtones\\T-Jingle.ogg  
+\\system\\media\\audio\\ringtones\\Terminated.ogg  
+\\system\\media\\audio\\ringtones\\TwirlAway.ogg  
+\\system\\media\\audio\\ringtones\\VeryAlarmed.ogg  
+\\system\\media\\audio\\ringtones\\World.ogg  
+\\system\\media\\audio\\ui\\Effect_Tick.ogg  
+ 
+ 
+ 
+--------------------------------------------------------------------------------  
+ 
+ 
+\\system\\sounds  
+默认的音乐测试文件，仅有一个test.mid文件，用于播放测试的文件。  
+\\system\\sounds\\test.mid  
+ 
+ 
+ 
+--------------------------------------------------------------------------------  
+ 
+ 
+\\system\\usr  
+用户文件夹，包含共享、键盘布局、时间区域文件等。  
+\\system\\usr\\keychars  
+\\system\\usr\\keylayout  
+\\system\\usr\\share  
+\\system\\usr\\srec  
+\\system\\usr\\keychars\\qwerty.kcm.bin  
+\\system\\usr\\keychars\\qwerty2.kcm.bin  
+\\system\\usr\\keychars\\trout-keypad-qwertz.kcm.bin  
+\\system\\usr\\keychars\\trout-keypad-v2.kcm.bin  
+\\system\\usr\\keychars\\trout-keypad-v3.kcm.bin  
+\\system\\usr\\keychars\\trout-keypad.kcm.bin  
+\\system\\usr\\keylayout\\h2w_headset.kl  
+\\system\\usr\\keylayout\\qwerty.kl  
+\\system\\usr\\keylayout\\trout-keypad-qwertz.kl  
+\\system\\usr\\keylayout\\trout-keypad-v2.kl  
+\\system\\usr\\keylayout\\trout-keypad-v3.kl  
+\\system\\usr\\keylayout\\trout-keypad.kl  
+\\system\\usr\\share\\bsk  
+\\system\\usr\\share\\zoneinfo  
+\\system\\usr\\share\\bsk\\V_FD_speed_101.bsk  
+\\system\\usr\\share\\bsk\\V_FD_std_101.bsk  
+\\system\\usr\\share\\zoneinfo\\zoneinfo.dat  
+\\system\\usr\\share\\zoneinfo\\zoneinfo.idx  
+\\system\\usr\\srec\\config  
+\\system\\usr\\srec\\config\\en.us  
+\\system\\usr\\srec\\config\\en.us\\baseline.par  
+\\system\\usr\\srec\\config\\en.us\\baseline11k.par  
+\\system\\usr\\srec\\config\\en.us\\baseline8k.par  
+\\system\\usr\\srec\\config\\en.us\\dictionary  
+\\system\\usr\\srec\\config\\en.us\\g2p  
+\\system\\usr\\srec\\config\\en.us\\grammars  
+\\system\\usr\\srec\\config\\en.us\\models  
+\\system\\usr\\srec\\config\\en.us\\dictionary\\basic.ok  
+\\system\\usr\\srec\\config\\en.us\\dictionary\\cmu6plus.ok.zip  
+\\system\\usr\\srec\\config\\en.us\\dictionary\\enroll.ok  
+\\system\\usr\\srec\\config\\en.us\\g2p\\en-US-ttp.data  
+\\system\\usr\\srec\\config\\en.us\\grammars\\VoiceDialer.g2g  
+\\system\\usr\\srec\\config\\en.us\\models\\generic.swiarb  
+\\system\\usr\\srec\\config\\en.us\\models\\generic11.lda  
+\\system\\usr\\srec\\config\\en.us\\models\\generic11_f.swimdl  
+\\system\\usr\\srec\\config\\en.us\\models\\generic11_m.swimdl  
+\\system\\usr\\srec\\config\\en.us\\models\\generic8.lda  
+\\system\\usr\\srec\\config\\en.us\\models\\generic8_f.swimdl  
+\\system\\usr\\srec\\config\\en.us\\models\\generic8_m.swimdl  
+ 
+ 

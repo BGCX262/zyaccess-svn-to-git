@@ -1,0 +1,20 @@
+http://www.blogjava.net/easywu/archive/2010/01/10/308959.html
+
+Android短信备份
+
+Android系统采用SQLite数据库方式存储所有接收到的短信，短信的SQLite数据库文件位于：
+/data/data/com.android.providers.telephony/databases/mmssms.db
+
+备份Android短信数据库到SD卡上，可以使用adb工具连接手机，然后使用如下命令
+busybox cp /data/data/com.android.providers.telephony/databases/mmssms.db /sdcard
+
+如果busybox cp命令不行，还可以使用cat命令：
+cat /data/data/com.android.providers.telephony/databases/mmssms.db > /sdcard/mmssms.db
+
+备份到SD卡后，可以将mmssms.db文件拷贝到电脑上，再使用SQLite Database Browser工具查看。
+SQLite Database Browser为一个开源工具，可以到如下地址下载：
+http://downloads.sourceforge.net/project/sqlitebrowser/sqlitebrowser/2.0%20beta1/sqlitebrowser_200_b1_win.zip
+
+工具在
+../tools/sqlitebrowser_200_b1_win.zip
+

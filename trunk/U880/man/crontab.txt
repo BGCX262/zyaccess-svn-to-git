@@ -1,0 +1,36 @@
+android上 crond！
+
+Sunday posted @ 2010年3月31日 17:39 in SundayBlog , 636 阅读
+一直在思考，android使用了linux kernel，为什么不将其adb shell打造为正儿八经的linux Terminal呢？ 此处以linux下面的crond为例讲解如何实现。
+
+开始动手：
+1、安装busybox 、root
+    这部分不多说，如果你搞不定，那还是别往下看了，在目前你的阶段，想继续看下去还是比较难的。
+2、打造linux environment
+    部分代码如下
+
+su
+(su之后需要的export LD_LIBRARY_PATH，和Export path在此略过，通过刷recovery.img得来的root一般不需如此）
+export HOME=/root
+export PS1="[\u@\h-\w] "
+exec bash
+......
+在此还可以继续set terminal 、set font等等，但是考虑到android 的使用者中操作系统使用windows、linux、mac等的都有， 无法一一考虑到，于是略过。
+
+3、编译crond
+    两个方法实现：
+    a、此步貌似比较复杂，我刚开始时选择了一个frond的程序，通过交叉编译得到可执行程序，此法的确可行，但是 太过于复杂，不推荐
+    b、执行busybox |grep cron 得到crond 和crontab，发现busybox中自带有这个程序，于是遂执行 ：
+
+crond
+crontab -u root -e
+(此处会自动打开vi进行编译，在windows上的终端上会出 问题，建议使用linux或者msys-cn中的rxvt，当然，你使用cygwin也成。此处按照crontab的语法格式进行书写）
+
+4、完成
+
+5、注意：
+    a、busybox的crond的控制文件是放在/data/cron/crontabs 中，在此目录下需要建立root文件，若提示找不到文件 则touch之，找不到目录，mkdir之！
+    b、busybox的crond必须使用/bin/sh ，而在我们的android上并没有，需要自己手动 mkdir /bin/  &&  ln -s /bin/sh  /system/xbin/busybox  ，这一点我折腾了很久，始终没搞明白，后来使用busybox crond 的log功能才发现。
+    c、如果你需要实现自动关机或者自动重启，那么直接在crontab中写入reboot是不行的，一般执行命令需要写绝对路径，对于reboot 和poweroff两个命令需要加上 -f 参数，但我不知道这样做是不是 太过于 暴力 了！使用者自参。
+    d、如果需要实现开机自动启动crond的话需要改动 boot.img，我懒得去改了，目前没有发现很诱人的应用，先只做到这儿吧。    
+    e、没有图，自己试一试。菜鸟如果不成功，可以论坛pm我；如果成功了，恭喜你，你离android底 层 又近了一步。
